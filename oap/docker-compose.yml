@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  oap:
+    image: apache/skywalking-oap-server:7.0.0-es7
+    ports:
+      - 11800:11800
+      - 12800:12800
+    networks:
+      - sky
+    environment:
+      SW_STORAGE: elasticsearch7
+      SW_STORAGE_ES_CLUSTER_NODES: elasticsearch:9200
+  
+networks:
+  sky:
+    external: true

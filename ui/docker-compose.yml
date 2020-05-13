@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  ui:
+    image: apache/skywalking-ui:7.0.0
+    ports:
+      - 8080:8080
+    networks:
+      - sky
+    environment:
+      SW_OAP_ADDRESS: oap:12800
+
+networks:
+  sky:
+    external: true
